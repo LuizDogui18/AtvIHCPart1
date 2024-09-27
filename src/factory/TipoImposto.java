@@ -1,4 +1,8 @@
 package factory;
 
-public class TipoImposto {
+public enum TipoImposto {
+    ICMS,
+    PIS,
+    IPI,
+    ISS
 }

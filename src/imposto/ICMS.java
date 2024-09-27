@@ -1,9 +1,13 @@
 package imposto;
 
 
-import model.*;
+import model.Produto;
 
+public class ICMS implements Imposto {
+    private static final double ALIQUOTA = 0.18;
 
-public class ICMS  {
-
+    @Override
+    public double calcular(Produto produto) {
+        return produto.getPreco() * ALIQUOTA;
+    }
 }

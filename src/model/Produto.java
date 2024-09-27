@@ -3,24 +3,33 @@ package model;
 public class Produto {
     private String nome;
     private double preco;
-    private String codigo;
+    private boolean industrial; // Define se é industrial ou não
+    private boolean servico;    // Define se é serviço
 
-    public Produto(String nome, double preco, String codigo) {
-
-        this.nome = (nome.length() > 22) ? nome.substring(0, 22) : nome;
+    public Produto(String nome, double preco, boolean industrial, boolean servico) {
+        this.nome = nome;
         this.preco = preco;
-        this.codigo = codigo;
+        this.industrial = industrial;
+        this.servico = servico;
     }
 
     public String getNome() {
         return nome;
     }
 
-    public String getPrecoFormatado() {
-        return String.format("R$ %.2f", preco); // Formato da moeda brasileira
+    public double getPreco() {
+        return preco;
     }
 
-    public String getCodigo() {
-        return codigo;
+    public String getPrecoFormatado() {
+        return String.format("R$ %.2f", preco);
+    }
+
+    public boolean isIndustrial() {
+        return industrial;
+    }
+
+    public boolean isServico() {
+        return servico;
     }
 }

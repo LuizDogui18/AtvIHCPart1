@@ -1,8 +1,7 @@
 package imposto;
 
-import model.*;
+import model.Produto;
 
 public interface Imposto {
-
+    double calcular(Produto produto);
 }
-
